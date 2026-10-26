@@ -7,7 +7,7 @@
  * Wheel diameter is human-measured; output CPR and yaw/slip still need calibration. */
 #define CONTROL_PERIOD_MS          10U
 #define CONTROL_MAX_INTERVAL_MS    50U
-#define DEBUG_PERIOD_MS            200U
+#define DEBUG_PERIOD_MS            100U
 #define KEY_DEBOUNCE_MS            25U
 
 #define MOTOR_COUNT                4U

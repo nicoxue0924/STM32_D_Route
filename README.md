@@ -1,5 +1,18 @@
 # STM32 D题：V10 MPU6050航向与90度转弯
 
+## V10L1 诊断日志
+
+新增约 10Hz 的 USART1 日志，包含四轮目标/实测速度、编码器、PWM 桥臂命令、灰度、
+IMU 航向/零偏、控制时序、配置和缺帧统计；电脑接收工具可保存原始日志、CSV 和 JSON。
+保持 115200/8N1，使用中断发送；运动参数及停车逻辑不变，没有新增 Wi-Fi 或车载存储。
+
+操作说明见 [Diagnostic-Logging.md](Documents/Diagnostic-Logging.md)。主机离线测试可运行
+`python Tests/run_all.py`，覆盖路线、倒车入库、日志与接收工具。
+本次没有生成或烧录新 HEX，已有 Firmware 中的文件和下面的构建记录仍属于基础版本；
+需要使用 Keil 对当前源码重新编译后再由操作者确认烧录。
+
+## 基础 V10 说明
+
 状态：已按用户本次例外授权完成Codex源码审查、离线仿真和Keil AC6.24全量编译。离线63039条断言通过，编译0错误0警告。V10烧录文件为Firmware/STM32_D_Route_V10.hex，通用HEX同步为V10；历史V9命名HEX保留。没有连接串口、烧录或启动电机。检查计划见Documents/V10_检查计划.txt，实际结果以Documents/V10_firmware_manifest.txt为准。
 
 ## 适用硬件与接线

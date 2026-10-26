@@ -17,3 +17,8 @@ MDK-ARM/JLinkLog.txt
 
 # Host test executables
 Tests/*.exe
+
+# Local telemetry captures and Python bytecode
+Logs/
+__pycache__/
+*.pyc

@@ -109,6 +109,8 @@ void OLED_ShowString(uint8_t x,uint8_t page,const char *value)
 void OLED_Service(void) { ++oled_service_calls; }
 uint8_t OLED_GetBus(void) { return 1; }
 void DebugUart_Init(void) {}
+void DebugUart_RecordControl(uint32_t now,uint32_t interval,uint32_t cost,const EncoderData *value)
+{ (void)now; (void)interval; (void)cost; (void)value; }
 void DebugUart_Publish(uint32_t now,const char *state,unsigned fault,const Gray8Data *gray,
                        const EncoderData *encoder,const int16_t *pwm,const RouteState *route,
                        const OdomData *odom,uint8_t armed)

@@ -182,6 +182,7 @@ void App_Poll(void)
         uint32_t interval=(uint32_t)(now-last_control);
         last_control=now;
         control_tick(now,interval);
+        DebugUart_RecordControl(now,interval,(uint32_t)(HAL_GetTick()-now),Encoder_GetData());
     }
     if (brake_hold && !moving() && (uint32_t)(now-brake_hold_start) >= STOP_BRAKE_HOLD_MS) {
         Motor_StopAll(0); brake_hold=0;
